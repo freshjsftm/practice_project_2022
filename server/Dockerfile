@@ -10,10 +10,9 @@ WORKDIR /server
 
 COPY package*.json ./
 
-RUN npm install -g nodemon
-RUN npm install -g sequelize-cli
-
-RUN npm install
+RUN npm install -g nodemon\
+  && npm install -g sequelize-cli\
+  && npm install
 
 COPY . .
 
