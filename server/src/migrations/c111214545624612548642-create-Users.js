@@ -31,8 +31,6 @@ module.exports = {
       },
       avatar: {
         type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue: 'anon.png',
       },
       role: {
         type: Sequelize.ENUM('customer', 'creator'),
@@ -42,10 +40,6 @@ module.exports = {
         type: Sequelize.DECIMAL,
         allowNull: false,
         defaultValue: 0,
-      },
-      accessToken: {
-        type: Sequelize.TEXT,
-        allowNull: true,
       },
       rating: {
         type: Sequelize.FLOAT,
