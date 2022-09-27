@@ -23,7 +23,7 @@ module.exports.login = async (req, res, next) => {
       balance: foundUser.balance,
       email: foundUser.email,
       rating: foundUser.rating,
-    }, CONSTANTS.JWT_SECRET, { expiresIn: CONSTANTS.ACCESS_TOKEN_TIME });
+    }, CONSTANTS.ACCESS_TOKEN_SECRET, { expiresIn: CONSTANTS.ACCESS_TOKEN_TIME });
     await userQueries.updateUser({ accessToken }, foundUser.id);
     res.send({ token: accessToken });
   } catch (err) {
@@ -44,7 +44,7 @@ module.exports.registration = async (req, res, next) => {
       balance: newUser.balance,
       email: newUser.email,
       rating: newUser.rating,
-    }, CONSTANTS.JWT_SECRET, { expiresIn: CONSTANTS.ACCESS_TOKEN_TIME });
+    }, CONSTANTS.ACCESS_TOKEN_SECRET, { expiresIn: CONSTANTS.ACCESS_TOKEN_TIME });
     await userQueries.updateUser({ accessToken }, newUser.id);
     res.send({ token: accessToken });
   } catch (err) {

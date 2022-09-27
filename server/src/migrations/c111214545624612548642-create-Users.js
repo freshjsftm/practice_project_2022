@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      password: {
+      passwordHash: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -45,6 +45,14 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
         defaultValue: 0,
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       },
     })
       .then(() => queryInterface.addConstraint('Users',  {
