@@ -7,7 +7,10 @@ const checkToken = require('../middlewares/checkToken');
 const validators = require('../middlewares/validators');
 const chatController = require('../controllers/chatController');
 const upload = require('../utils/fileUpload');
+const authRouter = require('./authRouter');
 const router = express.Router();
+
+router.use('/auth', authRouter);
 
 router.post(
   '/registration',
