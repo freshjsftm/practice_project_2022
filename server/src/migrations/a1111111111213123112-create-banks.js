@@ -1,4 +1,3 @@
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Banks', {
@@ -23,7 +22,7 @@ module.exports = {
         type: Sequelize.DECIMAL,
         allowNull: false,
         defaultValue: 0,
-      },
+      }
     })
       .then(() => queryInterface.addConstraint('Banks', {
         type: 'check',
