@@ -22,6 +22,7 @@ router.use('/auth', authRouter);
 //   validators.validateLogin,
 //   userController.login,
 // );
+
 //router.post('/getUser',checkAuth);
 
 router.use(checkAccessToken);
