@@ -22,10 +22,7 @@ router.use('/auth', authRouter);
 //   validators.validateLogin,
 //   userController.login,
 // );
-router.post(
-  '/getUser',
-  checkAuth,
-);
+//router.post('/getUser',checkAuth);
 
 router.use(checkAccessToken);
 router.post(
@@ -49,7 +46,6 @@ router.post(
 
 router.get(
   '/getContestById',
-  checkToken.checkToken,
   basicMiddlewares.canGetContest,
   contestController.getContestById,
 );
